@@ -1,9 +1,9 @@
 /*
  * sauce.h
- * Ansilove 4.2.1
+ * Ansilove 4.2.3
  * https://www.ansilove.org
  *
- * Copyright (c) 2011-2025 Stefan Vogt, Brian Cassidy, and Frederic Cambus
+ * Copyright (c) 2011-2026 Stefan Vogt, Brian Cassidy, and Frederic Cambus
  * All rights reserved.
  *
  * Ansilove is licensed under the BSD 2-Clause license.
@@ -46,6 +46,7 @@ struct sauce {
 
 struct sauce	*sauceReadFileName(char *);
 struct sauce	*sauceReadFile(FILE *);
+void		 sauceFree(struct sauce *);
 void		 readRecord(FILE *, struct sauce *);
 int		 readComments(FILE *, char **, int32_t);
 

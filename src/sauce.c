@@ -1,9 +1,9 @@
 /*
  * sauce.c
- * Ansilove 4.2.1
+ * Ansilove 4.2.3
  * https://www.ansilove.org
  *
- * Copyright (c) 2011-2025 Stefan Vogt, Brian Cassidy, and Frederic Cambus
+ * Copyright (c) 2011-2026 Stefan Vogt, Brian Cassidy, and Frederic Cambus
  * All rights reserved.
  *
  * Ansilove is licensed under the BSD 2-Clause license.
@@ -44,6 +44,23 @@ sauceReadFile(FILE *file)
 		readRecord(file, record);
 	}
 	return record;
+}
+
+/* Free a SAUCE record and its comment lines. */
+void
+sauceFree(struct sauce *record)
+{
+	if (record == NULL)
+		return;
+
+	if (record->comment_lines != NULL) {
+		for (int32_t i = 0; i < record->comments; i++)
+			free(record->comment_lines[i]);
+
+		free(record->comment_lines);
+	}
+
+	free(record);
 }
 
 #define READ_RECORD(record, size) \
@@ -93,12 +110,19 @@ readRecord(FILE *file, struct sauce *record)
 	}
 
 	if (record->comments > 0) {
-		record->comment_lines = malloc(record->comments *sizeof (*record->comment_lines));
+		record->comment_lines = calloc(record->comments, sizeof (*record->comment_lines));
 
 		if (record->comment_lines != NULL) {
 			if (readComments(file, record->comment_lines, record->comments) == -1) {
+				for (int32_t i = 0; i < record->comments; i++)
+					free(record->comment_lines[i]);
+
+				free(record->comment_lines);
+				record->comment_lines = NULL;
 				record->comments = 0;
 			}
+		} else {
+			record->comments = 0;
 		}
 	}
 }

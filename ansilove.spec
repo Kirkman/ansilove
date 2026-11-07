@@ -1,5 +1,5 @@
 Name:           ansilove
-Version:        4.2.1
+Version:        4.2.3
 Release:        1%{?dist}
 Summary:        ANSI and ASCII art to PNG converter
 
