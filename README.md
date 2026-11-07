@@ -16,7 +16,7 @@ _ _________    /    \_______ _ \___    /_______/    /   _/ \____      \  /
                                     \__\/        \______\/ h7/dS!\_____\/
 ```
 
-# AnsiLove/C
+# AnsiLove/C (Atari ST fork)
 
 AnsiLove is an ANSI and ASCII art to PNG converter, allowing to convert
 ANSI and artscene-related file formats into PNG images, supporting ANSI
@@ -33,6 +33,9 @@ language.
 Experimental seccomp support is available for selected architectures and
 can be enabled by setting the `ENABLE_SECCOMP` variable to `1` when
 invoking CMake.
+
+This fork adds support for the unique 4x8 font and color palettes used 
+by the Atari ST programs ANSIterm and FANSI in the early 1990s.
 
 # Specs
 
@@ -234,7 +237,6 @@ ATARI ST fonts can be (all case-sensitive):
 - `atari` (alias to ANSIterm)
 - `ansiterm` (Original ANSIterm font)
 
-
 ## Bits
 
 `bits` can be:
@@ -319,6 +321,8 @@ AnsiLove/C is released under the BSD 2-Clause license. See the
 AnsiLove/C is developed by Stefan Vogt ([@ByteProject][22]), Brian Cassidy
 ([@bricas][23]) and Frederic Cambus ([@fcambus][24]).
 
+The changes in this Atari ST fork were made by Josh Renaud ([@Kirkman][25]).
+
 # Resources
 
 Project homepage: https://www.ansilove.org
@@ -349,3 +353,4 @@ GitHub: https://github.com/ansilove/ansilove
 [22]: https://github.com/ByteProject
 [23]: https://github.com/bricas
 [24]: https://github.com/fcambus
+[25]: https://github.com/kirkman
