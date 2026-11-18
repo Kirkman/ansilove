@@ -21,7 +21,7 @@
 #define VERSION "4.2.3-atari"
 
 enum {
-	FONTS = 41,
+	FONTS = 42,
 	TYPES = 7
 };
 

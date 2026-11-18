@@ -305,6 +305,9 @@ main(int argc, char *argv[])
 
 				if (strcmp(record->tinfos, "Atari ANSIterm") == 0)
 					font = "ansiterm";
+
+				if (strcmp(record->tinfos, "Atari FANSI") == 0)
+					font = "fansi";
 			}
 
 			if (usedSAUCE)
