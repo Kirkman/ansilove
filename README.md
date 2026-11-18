@@ -34,7 +34,7 @@ Experimental seccomp support is available for selected architectures and
 can be enabled by setting the `ENABLE_SECCOMP` variable to `1` when
 invoking CMake.
 
-This fork adds support for the unique 4x8 font and color palettes used 
+This fork adds support for the unique 4x8 fonts and color palettes used 
 by the Atari ST programs ANSIterm and FANSI in the early 1990s.
 
 # Specs
@@ -236,6 +236,7 @@ ATARI ST fonts can be (all case-sensitive):
 
 - `atari` (alias to ANSIterm)
 - `ansiterm` (Original ANSIterm font)
+- `fansi` (Original FANSI font)
 
 ## Bits
 
